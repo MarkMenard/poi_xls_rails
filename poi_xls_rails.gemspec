@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Enable Labs Pairing 3"]
   s.email       = ["pairing3@enablelabs.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Rails Template Handler for Excel files using Apache POI libary.}
+  s.description = %q{Rails Template Handler for Excel files using Apache POI libary.}
 
   s.rubyforge_project = "poi_xls_rails"
 
