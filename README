@@ -1,0 +1,18 @@
+Inspiration
+-----------
+
+This gem is highly influenced by the Prawn template handler and several other Excel template handlers that make use of the Spreadsheet gem.
+
+External Requirements
+---------------------
+
+To use this gem you will need to load the latest stable jar file of the Apache POI project from http://poi.apache.org/download.html.
+
+You can do this simply with initializer such as:
+
+require "#{Rails.root}/lib/poi-3.7-20101029.jar"
+
+About the Apache POI Project
+----------------------------
+
+Apache's POI library is an extensive collection of Java classes for manipulating various Microsoft Office file formats, including Excel, Word, and much more. For a full information see http://poi.apache.org/.
