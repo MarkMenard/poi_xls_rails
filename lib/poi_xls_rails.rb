@@ -48,17 +48,14 @@ module PoiXlsRails
         if content_type == 'text/csv'
           # http://en.wikipedia.org/wiki/Comma-separated_values#Specification
           
-          max_row_num = 0
-          
           workbook_arr = (0...workbook.number_of_sheets).inject([]) { |workbook_arr, sheet_index|
             sheet = workbook.getSheetAt(sheet_index)
-            max_row_num = sheet.last_row_num + 1 if max_row_num < sheet.last_row_num
             
-            workbook_arr << (0...sheet.last_row_num).inject([]) { |sheet_arr, row_index|
+            workbook_arr << (0..sheet.last_row_num).inject([]) { |sheet_arr, row_index|
               row = sheet.getRow(row_index)
               row_arr = []
               
-              sheet_arr << (0...row.last_cell_num).inject([]) { |row_arr, cell_index|
+              sheet_arr << (0..row.last_cell_num).inject([]) { |row_arr, cell_index|
                 cell = row.getCell(cell_index)
                 
                 attempt_number = 0
@@ -87,7 +84,7 @@ module PoiXlsRails
                 
               }.to_csv
             }.join("")
-          }.join("," * max_row_num)
+          }.join("\n\n")
         else
           outs = java.io.ByteArrayOutputStream.new
           workbook.write(outs)
